@@ -30,6 +30,10 @@ func (e *endpoint) loginpage(c echo.Context) error {
 	return c.Render(http.StatusOK, "Login.html", "")
 }
 
+func (e *endpoint) recaptcha(c echo.Context) error {
+	return c.Render(http.StatusOK, "recaptcha.html", "")
+}
+
 type basiclogin struct {
 	Name     string `json:"name"`
 	Password string `json:"password"`
