@@ -11,10 +11,11 @@ func New(e *echo.Echo, ss m.Storage) {
 	}
 
 	e.GET("/", ep.hello)
-
+	e.GET("/recaptcha", ep.recaptcha)
 	g := e.Group("/admin")
 	g.GET("/login", ep.loginpage)
 	g.POST("/login", ep.login)
+
 }
 
 type endpoint struct {
